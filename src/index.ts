@@ -2,10 +2,10 @@ import { DeepPartial } from 'utility-types';
 
 export function factoryMaker<ModelInterface = any>(
   modelMakerFn: (options?: DeepPartial<ModelInterface>) => ModelInterface
-): <AmountOfModelToGenerate extends number>(
-  quantity: AmountOfModelToGenerate,
+): <AmountOfModelsToGenerate extends number>(
+  quantity: AmountOfModelsToGenerate,
   options?: DeepPartial<ModelInterface>
-) => AmountOfModelToGenerate extends 1 ? ModelInterface : ModelInterface[] {
+) => AmountOfModelsToGenerate extends 1 ? ModelInterface : ModelInterface[] {
   return <N extends number>(
     quantity: N,
     options?: DeepPartial<ModelInterface>
