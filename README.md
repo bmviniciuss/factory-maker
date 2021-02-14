@@ -16,7 +16,7 @@ export type UserDomain = {
 ### Define a generic model factory maker
 ```typescript
 import faker from 'faker'
-import { DeepPartial } from 'utility-types'
+import { DeepPartial } from 'factory-maker'
 
 function makeDomainUser (options?: DeepPartial<UserDomain>):UserDomain {
   return {
@@ -33,6 +33,8 @@ function makeDomainUser (options?: DeepPartial<UserDomain>):UserDomain {
 
 ### Create factory
 ```typescript
+import factoryMaker from "factory-maker"
+
 export default factoryMaker<UserDomain>(makeDomainUser)
 ```
 
